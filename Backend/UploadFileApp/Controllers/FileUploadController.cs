@@ -22,31 +22,28 @@ namespace UploadFileApp.Controllers
         public async Task<string> Post([FromForm]FileUpload objFile)
         {
             try
-            {
+            {  
                 if (objFile.files.Length > 0)
                 {
                     if (!Directory.Exists(_basePath))
                     {
                         Directory.CreateDirectory(_basePath);
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_basePath + objFile.files.FileName))
+                    if (System.IO.File.Exists(_basePath + objFile.files.FileName) == false)
                     {
+                        using (FileStream fileStream = System.IO.File.Create(_basePath + objFile.files.FileName))
+                        {
+                            {
+                                objFile.files.CopyTo(fileStream);
+                                fileStream.Flush();
 
-                        //if (Directory.GetFiles(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName) == null)
-                        //{
-                        //    objFile.files.CopyTo(fileStream);
-                        //    fileStream.Flush();
-                        //    return "\\Upload\\" + objFile.files.FileName;
-                        //}
-                        //else return "numele deja exista!"
-                       
-                          
-                            objFile.files.CopyTo(fileStream);
-                            fileStream.Flush();
-                            return _basePath + objFile.files.FileName;
-                       
-                       
-
+                                return _basePath + objFile.files.FileName;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        return "This file already exist!";
                     }
                 }
                 else
