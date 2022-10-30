@@ -25,3 +25,4 @@ C:\Users\valyg\OneDrive\Documents\GitHub\UploadFileApp\Backend\UploadFileApp\obj
 C:\Users\valyg\OneDrive\Documents\GitHub\UploadFileApp\Backend\UploadFileApp\obj\Debug\net6.0\UploadFileApp.pdb
 C:\Users\valyg\OneDrive\Documents\GitHub\UploadFileApp\Backend\UploadFileApp\obj\Debug\net6.0\UploadFileApp.genruntimeconfig.cache
 C:\Users\valyg\OneDrive\Documents\GitHub\UploadFileApp\Backend\UploadFileApp\obj\Debug\net6.0\ref\UploadFileApp.dll
+C:\Users\valyg\OneDrive\Documents\GitHub\UploadFileApp\Backend\UploadFileApp\bin\Debug\net6.0\UploadFileApp.staticwebassets.runtime.json

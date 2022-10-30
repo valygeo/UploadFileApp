@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "uv0RcDR2sCcoEbpphzCT6gjvISSRL11k4hKZNCW492I=",
+  "Hash": "0olRgllf7IVAMCQeGsFjniNHX6hI9EnzarCvsXIJ65s=",
   "Source": "UploadFileApp",
   "BasePath": "_content/UploadFileApp",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "UploadFileApp\\wwwroot",
+      "Source": "UploadFileApp",
+      "ContentRoot": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\",
+      "BasePath": "_content/UploadFileApp",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
