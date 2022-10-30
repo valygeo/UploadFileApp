@@ -9,10 +9,13 @@ namespace UploadFileApp.Controllers
     public class FileUploadController : ControllerBase
     {
         public static IWebHostEnvironment _environment;
+        private readonly string _basePath;
+       
        
         public FileUploadController(IWebHostEnvironment environment)
         {
             _environment = environment;
+            _basePath = _environment.WebRootPath + "\\Upload\\";
         }
         [HttpPost("UploadFile")]
 
@@ -22,15 +25,28 @@ namespace UploadFileApp.Controllers
             {
                 if (objFile.files.Length > 0)
                 {
-                    if (!Directory.Exists(_environment.WebRootPath + "\\Upload\\"))
+                    if (!Directory.Exists(_basePath))
                     {
-                        Directory.CreateDirectory(_environment.WebRootPath + "\\Upload\\");
+                        Directory.CreateDirectory(_basePath);
                     }
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName))
+                    using (FileStream fileStream = System.IO.File.Create(_basePath + objFile.files.FileName))
                     {
-                        objFile.files.CopyTo(fileStream);
-                        fileStream.Flush();
-                        return "\\Upload\\" + objFile.files.FileName;
+
+                        //if (Directory.GetFiles(_environment.WebRootPath + "\\Upload\\" + objFile.files.FileName) == null)
+                        //{
+                        //    objFile.files.CopyTo(fileStream);
+                        //    fileStream.Flush();
+                        //    return "\\Upload\\" + objFile.files.FileName;
+                        //}
+                        //else return "numele deja exista!"
+                       
+                          
+                            objFile.files.CopyTo(fileStream);
+                            fileStream.Flush();
+                            return _basePath + objFile.files.FileName;
+                       
+                       
+
                     }
                 }
                 else
