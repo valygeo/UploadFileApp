@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using UploadFileApp.Models;
 
 namespace UploadFileApp.Controllers
@@ -33,14 +34,15 @@ namespace UploadFileApp.Controllers
                 {
                     if (System.IO.File.Exists(_basePath + file.files.FileName) == true)
                     {
-                       var stream = System.IO.File.OpenRead(_basePath+file.files.FileName);
-                        return Ok(stream);
+                        var stream = System.IO.File.ReadAllText(_basePath + file.files.FileName);
+                        string jsonObject = JsonConvert.SerializeObject(stream);
+                        return Ok(jsonObject);
                     }
-                    return BadRequest("file doesn't exist!");
+                    return BadRequest("File doesn't exist!");
                 }
-                return BadRequest("file is empty!");
+                return BadRequest("File is empty!");
             }
-            return BadRequest("directory doesn't exist!");
+            return BadRequest("Directory doesn't exist!");
 
 
         }
