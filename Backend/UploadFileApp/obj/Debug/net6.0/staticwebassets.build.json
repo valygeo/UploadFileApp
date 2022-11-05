@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TjYyU1dTFCtNmKjVDGiNLtXFrH9yJ4OBptKi8Y9RidY=",
+  "Hash": "AG1iIdVBQgt7AiJAmI54bUX3fLqQLmfyPUuzxMTSOz4=",
   "Source": "UploadFileApp",
   "BasePath": "_content/UploadFileApp",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Upload\\31.csv"
+    },
+    {
+      "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\312.csv",
+      "SourceId": "UploadFileApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\",
+      "BasePath": "_content/UploadFileApp",
+      "RelativePath": "Upload/312.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\312.csv"
     },
     {
       "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\33.csv",
@@ -153,6 +170,23 @@
       "OriginalItemSpec": "wwwroot\\Upload\\date.csv"
     },
     {
+      "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\dateexemplu.csv",
+      "SourceId": "UploadFileApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\",
+      "BasePath": "_content/UploadFileApp",
+      "RelativePath": "Upload/dateexemplu.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\dateexemplu.csv"
+    },
+    {
       "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\dd.csv",
       "SourceId": "UploadFileApp",
       "SourceType": "Discovered",
@@ -168,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Upload\\dd.csv"
+    },
+    {
+      "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\jsonfile.csv",
+      "SourceId": "UploadFileApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\",
+      "BasePath": "_content/UploadFileApp",
+      "RelativePath": "Upload/jsonfile.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\jsonfile.csv"
     },
     {
       "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\pngtree-pink-watercolor-brushes-171474-png-image_1733978.jpg",
