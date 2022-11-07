@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "U1h3SAu+SO9aT51bBAvJ3EVzkRg0hSgAZK7bYF1bmhw=",
+  "Hash": "4Kd46DGWG0LEhU2k8dPynb3XMKBGMA7vHMlKDeqOia0=",
   "Source": "UploadFileApp",
   "BasePath": "_content/UploadFileApp",
   "Mode": "Default",
@@ -202,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Upload\\dateexemplu.csv"
+    },
+    {
+      "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\datelemele.csv",
+      "SourceId": "UploadFileApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\",
+      "BasePath": "_content/UploadFileApp",
+      "RelativePath": "Upload/datelemele.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\datelemele.csv"
     },
     {
       "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\datepentrutest.csv",
