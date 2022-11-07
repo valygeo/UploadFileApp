@@ -45,7 +45,7 @@ namespace UploadFileApp.Controllers
             //}
             //return BadRequest("Directory doesn't exist!");
             var data = System.IO.File.ReadAllText(_basePath + file.files.FileName);
-            var datas = data.Split(); // string[] containing each line of the CSV
+            var datas = data.Split("\r\n"); // string[] containing each line of the CSV
             var MemberNames = datas[0].Split(','); // the first line, that contains the member names
             var MYObj = datas.Skip(1) // don't take the first line (member names)
                              .Select((x) => x.Split(',') // split columns
@@ -54,9 +54,11 @@ namespace UploadFileApp.Controllers
                                               * with object having 2 properties Key and Value
                                               * (and removes the unneeded ")
                                               */
-                                             .Select((y, i) => new {
+                                             .Select((y, i) => new
+                                             {
                                                  Key = MemberNames[i].Trim('"'),
                                                  Value = y.Trim('"')
+
                                              })
                                              // convert it to a Dictionary
                                              .ToDictionary(d => d.Key, d => d.Value));
@@ -67,6 +69,7 @@ namespace UploadFileApp.Controllers
             var Json = JsonConvert.SerializeObject(MYObj, Formatting.Indented);
             Debug.WriteLine(Json);
             return Ok(Json);
+
 
 
         }
