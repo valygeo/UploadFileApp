@@ -44,32 +44,41 @@ namespace UploadFileApp.Controllers
             //    return BadRequest("File is empty!");
             //}
             //return BadRequest("Directory doesn't exist!");
-            var data = System.IO.File.ReadAllText(_basePath + file.files.FileName);
-            var datas = data.Split("\r\n"); // string[] containing each line of the CSV
-            var MemberNames = datas[0].Split(','); // the first line, that contains the member names
-            var MYObj = datas.Skip(1) // don't take the first line (member names)
-                             .Select((x) => x.Split(',') // split columns
-                                             /*
-                                              * create an anonymous collection
-                                              * with object having 2 properties Key and Value
-                                              * (and removes the unneeded ")
-                                              */
-                                             .Select((y, i) => new
-                                             {
-                                                 Key = MemberNames[i].Trim('"'),
-                                                 Value = y.Trim('"')
+            if (Directory.Exists(_basePath))
+            {
+                if(file.files.Length>0)
+                {
+                    if(System.IO.File.Exists(_basePath + file.files.FileName) == true)
+                    {
+                        var data = System.IO.File.ReadAllText(_basePath + file.files.FileName);
+                        var datas = data.Split("\r\n"); 
+                        var MemberNames = datas[0].Split(','); 
+                        var MYObj = datas.Skip(1) 
+                                         .Select((x) => x.Split(',') 
+                                                         
+                                                         .Select((y, i) => new
+                                                         {
+                                                             Key = MemberNames[i].Trim('"'),
+                                                             Value = y.Trim('"')
 
-                                             })
-                                             // convert it to a Dictionary
-                                             .ToDictionary(d => d.Key, d => d.Value));
+                                                         })
+                                                         
+                                                         .ToDictionary(d => d.Key, d => d.Value));
 
-            // MYObject is IEnumerable<Dictionary<string, string>>
+                       
 
-            // serialize (remove indented if needed)
-            var Json = JsonConvert.SerializeObject(MYObj, Formatting.Indented);
-            Debug.WriteLine(Json);
-            return Ok(Json);
+                      
+                        var Json = JsonConvert.SerializeObject(MYObj, Formatting.Indented);
+                        Debug.WriteLine(Json);
+                        return Ok(Json);
 
+                    }
+                    return BadRequest("File doesn't exist!");
+                }
+                return BadRequest("File is empty!");
+            }
+            return BadRequest("Directory doesn't exist!");
+           
 
 
         }
