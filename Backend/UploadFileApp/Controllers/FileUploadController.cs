@@ -69,7 +69,6 @@ namespace UploadFileApp.Controllers
 
                       
                         var Json = JsonConvert.SerializeObject(MYObj, Formatting.Indented);
-                        Debug.WriteLine(Json);
                         return Ok(Json);
 
                     }
