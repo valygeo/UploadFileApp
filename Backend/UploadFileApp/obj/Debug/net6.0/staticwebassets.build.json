@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ot0MIbhSN1FtGr3wCLK3tcRHRd/GrI/MA4DaF5XMTZI=",
+  "Hash": "iAwAA0rtuY+iw7c+A1eXRBYyC6uE9v+YWgRGOpvTeR4=",
   "Source": "UploadFileApp",
   "BasePath": "_content/UploadFileApp",
   "Mode": "Default",
@@ -16,6 +16,40 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\test.csv",
+      "SourceId": "UploadFileApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\",
+      "BasePath": "_content/UploadFileApp",
+      "RelativePath": "Upload/test.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\test.csv"
+    },
+    {
+      "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\test2.csv",
+      "SourceId": "UploadFileApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\",
+      "BasePath": "_content/UploadFileApp",
+      "RelativePath": "Upload/test2.csv",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Upload\\test2.csv"
+    },
     {
       "Identity": "C:\\Users\\valyg\\OneDrive\\Documents\\GitHub\\UploadFileApp\\Backend\\UploadFileApp\\wwwroot\\Upload\\testdocument.csv",
       "SourceId": "UploadFileApp",

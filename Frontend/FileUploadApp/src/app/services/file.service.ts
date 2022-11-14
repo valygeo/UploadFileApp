@@ -11,4 +11,7 @@ export class FileService {
   public uploadCsvFile(fileToUpload:File):Observable<any>{
     return this.apiService.uploadFile(fileToUpload);
   }
+  public getCsvFile(fileToGet:File):Observable<any>{
+    return this.apiService.getFile(fileToGet);
+  }
 }
