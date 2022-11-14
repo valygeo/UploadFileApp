@@ -11,7 +11,7 @@ export class ApiService {
   private urlUploadFile='https://localhost:7011/api/FileUpload/UploadFile/';
   public uploadFile(fileToUpload:File):Observable<any>{
     const formData:FormData=new FormData();
-    formData.append('fileKey',fileToUpload,fileToUpload.name);
+    formData.append('files',fileToUpload,fileToUpload.name);
     return this.http.post(this.urlUploadFile,formData,{responseType:'text'})
   }
 }

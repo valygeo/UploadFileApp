@@ -102,8 +102,7 @@ namespace UploadFileApp.Controllers
                             {
                                 objFile.files.CopyTo(fileStream);
                                 fileStream.Flush();
-
-                                return _basePath + objFile.files.FileName;
+                                return "File uploaded!";
                             }
                         }
                     }
