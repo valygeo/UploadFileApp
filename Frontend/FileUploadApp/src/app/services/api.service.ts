@@ -18,6 +18,13 @@ export class ApiService {
   public getFile(fileToGet:File):Observable<any>{
     const formData2:FormData = new FormData();
     formData2.append('files',fileToGet,fileToGet.name);
-    return this.http.get(this.urlGetFile +formData2);
+    
+      let fileReader = new FileReader();
+      fileReader.onload = (e) => {
+        console.log(fileReader.result);
+      }
+      fileReader.readAsText(fileToGet);
+  
+    return this.http.get(this.urlGetFile+fileToGet);
   }
 }

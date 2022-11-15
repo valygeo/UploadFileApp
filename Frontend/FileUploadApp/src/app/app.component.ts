@@ -15,11 +15,19 @@ export class AppComponent {
   ){}
  name:string='';
 file:any;
+url: any; //Angular 11, for stricter type
+	msg = "";
  getName(name:string){
   this.name=name;
  }
  getFile(event:any){
   this.file=event.target.files[0];
+  // var reader = new FileReader();
+  // reader.readAsDataURL(event.target.files[0]);
+		
+	// 	reader.onload = (_event) => {
+	// 		this.msg = "";
+	// 		this.url = reader.result; 
   console.log(this.file);
  }
 
@@ -27,7 +35,8 @@ file:any;
     this.fileService.uploadCsvFile(this.file).subscribe((data)=>console.log(data));
  }
  getApiFile(){
-  this.fileService.getCsvFile(this.file).subscribe((data)=>console.log(data));
+  this.fileService.getCsvFile(this.file).subscribe((data)=>{console.log(data),
+  console.log(this.file)});
  }
 }
 
