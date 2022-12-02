@@ -35,8 +35,8 @@ url: any; //Angular 11, for stricter type
     this.fileService.uploadCsvFile(this.file).subscribe((data)=>console.log(data));
  }
  getApiFile(){
-  this.fileService.getCsvFile(this.file).subscribe((data)=>{console.log(data),
-  console.log(this.file)});
+  this.fileService.getCsvFile(this.file).subscribe((data)=>console.log(data),
+  );
  }
 }
 
