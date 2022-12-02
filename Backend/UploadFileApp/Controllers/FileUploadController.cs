@@ -22,7 +22,7 @@ namespace UploadFileApp.Controllers
 
 
         [HttpGet("GetFile")]
-        public ActionResult <FileUpload> GetFile([FromForm]FileUpload file)
+        public async Task<string> GetFile([FromForm]FileUpload file)
         {
             ////if (Directory.Exists(_basePath))
             ////{
@@ -44,40 +44,118 @@ namespace UploadFileApp.Controllers
             //    return BadRequest("File is empty!");
             //}
             //return BadRequest("Directory doesn't exist!");
-            if (Directory.Exists(_basePath))
+            try
             {
-                if(file.files.Length>0)
+                if (Directory.Exists(_basePath))
                 {
-                    if(System.IO.File.Exists(_basePath + file.files.FileName) == true)
+
+                    if (file.files.Length > 0)
                     {
-                        var data = System.IO.File.ReadAllText(_basePath + file.files.FileName);
-                        var datas = data.Split("\r\n"); 
-                        var MemberNames = datas[0].Split(','); 
-                        var MYObj = datas.Skip(1) 
-                                         .Select((x) => x.Split(',') 
-                                                         
-                                                         .Select((y, i) => new
-                                                         {
-                                                             Key = MemberNames[i].Trim('"'),
-                                                             Value = y.Trim('"')
+                        if (System.IO.File.Exists(_basePath + file.files.FileName) == true)
+                        {
+                            var data = System.IO.File.ReadAllText(_basePath + file.files.FileName);
+                            var datas = data.Split("\r\n");
+                            var MemberNames = datas[0].Split(',');
+                            var MYObj = datas.Skip(1)
+                                             .Select((x) => x.Split(',')
 
-                                                         })
-                                                         
-                                                         .ToDictionary(d => d.Key, d => d.Value));
+                                                             .Select((y, i) => new
+                                                             {
+                                                                 Key = MemberNames[i].Trim('"'),
+                                                                 Value = y.Trim('"')
 
-                       
+                                                             })
 
-                      
-                        var Json = JsonConvert.SerializeObject(MYObj, Formatting.Indented);
-                        return Ok(Json);
+                                                             .ToDictionary(d => d.Key, d => d.Value));
 
+
+
+
+                            var Json = JsonConvert.SerializeObject(MYObj, Formatting.Indented);
+                            return Json;
+
+                        }
+                        return "File doesn't exist!";
                     }
-                    return BadRequest("File doesn't exist!");
+                    return "File is empty!";
                 }
-                return BadRequest("File is empty!");
+                return "Directory doesn't exist!";
             }
-            return BadRequest("Directory doesn't exist!");
+            catch (Exception exception)
+            {
+
+                return exception.Message.ToString();
+            }
            
+
+
+        }
+        [HttpGet("GetFileByName/{fileName}")]
+        public async Task<string> GetFileByName([FromRoute(Name ="fileName")] string fileName)
+        {
+            ////if (Directory.Exists(_basePath))
+            ////{
+            ////    return (Ok(Directory.EnumerateFiles(_basePath)));
+            ////}
+            ////return BadRequest("directory not found!");
+            //if(Directory.Exists(_basePath))
+            //{
+            //    if(file.files.Length > 0)
+            //    {
+            //        if (System.IO.File.Exists(_basePath + file.files.FileName) == true)
+            //        {
+            //            var stream = System.IO.File.ReadAllText(_basePath + file.files.FileName);
+            //            string jsonObject = JsonConvert.SerializeObject(stream);
+            //            return Ok(jsonObject);
+            //        }
+            //        return BadRequest("File doesn't exist!");
+            //    }
+            //    return BadRequest("File is empty!");
+            //}
+            //return BadRequest("Directory doesn't exist!");
+            try
+            {
+                if (Directory.Exists(_basePath))
+                {
+
+                  
+                    
+                        if (System.IO.File.Exists(_basePath + fileName) == true)
+                        {
+                            var data = System.IO.File.ReadAllText(_basePath + fileName);
+                            var datas = data.Split("\r\n");
+                            var MemberNames = datas[0].Split(',');
+                            var MYObj = datas.Skip(1)
+                                             .Select((x) => x.Split(',')
+
+                                                             .Select((y, i) => new
+                                                             {
+                                                                 Key = MemberNames[i].Trim('"'),
+                                                                 Value = y.Trim('"')
+
+                                                             })
+
+                                                             .ToDictionary(d => d.Key, d => d.Value));
+
+
+
+
+                            var Json = JsonConvert.SerializeObject(MYObj, Formatting.Indented);
+                            return Json;
+
+                        }
+                        return "File doesn't exist!";
+                    }
+                   
+                
+                return "Directory doesn't exist!";
+            }
+            catch (Exception exception)
+            {
+
+                return exception.Message.ToString();
+            }
+
 
 
         }
