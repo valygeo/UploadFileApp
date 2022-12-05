@@ -1,3 +1,22 @@
 <input type="text" (change)="getName(name.value)" #name/><br/>
 <input type="file" (change)="getFile($event)"/><br/>
 <input type="button"(click)="submitData() ;getApiFile()" value="Upload file">
+<div class="container mt-5">
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>Nume</th>
+            <th>Prenume</th>
+            <th>Telefon</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of data">
+          <td>{{ data.Nume }}</td>
+          <td>{{ data.Prenume}}</td>
+          <td>{{ data.Telefon }}</td>
+          
+        </tr>
+      </tbody>
+    </table>
+  </div>

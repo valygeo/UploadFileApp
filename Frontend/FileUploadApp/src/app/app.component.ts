@@ -15,6 +15,7 @@ export class AppComponent {
   ){}
  name:string='';
 file:any;
+data: any[] | undefined;
 url: any; //Angular 11, for stricter type
 	msg = "";
  getName(name:string){
@@ -35,7 +36,8 @@ url: any; //Angular 11, for stricter type
     this.fileService.uploadCsvFile(this.file).subscribe((data)=>console.log(data));
  }
  getApiFile(){
-  this.fileService.getCsvFile(this.file).subscribe((data)=>console.log(data),
+  this.fileService.getCsvFile(this.file).subscribe((data)=>{console.log(data),
+  this.data=data;}
   );
  }
 }
